@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { SlArrowRightCircle } from "react-icons/sl";
 
@@ -27,7 +26,7 @@ const Hero = () => {
           technologies like ReactJS and VueJS, as well as back-end technologies
           like NodeJS, ExpressJS, MySQL, and MongoDB. I help business grow by
           crafting amazing web experiences. If you’re looking for a developer
-          that likes to get stuff done.
+          that likes to get stuff done
         </p>
       </div>
       <div className="flex justify-center items-center mt-4 gap-x-2 text-3xl">
@@ -37,14 +36,17 @@ const Hero = () => {
         >
           <FaLinkedin />
         </a>
-        <a className="hover:scale-125" href="">
+        <a
+          className="hover:scale-125"
+          href="https://www.instagram.com/dhenmasm?igsh=MTM3aTNwb3M5eXk1OQ=="
+        >
           <FaInstagram />
         </a>
         <a className="hover:scale-125" href="https://github.com/dhenmasadhi">
           <FaGithub />
         </a>
       </div>
-      <div className="flex justify-center items-center my-7 gap-10">
+      <div className="flex justify-center items-center my-7 gap-10 mb-10 md:mb-32">
         <button className="flex justify-center items-center gap-x-2 underline font-semibold text-xl hover:scale-110">
           Let's Talk!
           <SlArrowRightCircle />

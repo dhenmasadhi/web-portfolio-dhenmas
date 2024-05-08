@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <div>
-      <nav className="bg-[#292f36] dark:bg-gray-900 fixed w-full z-20 top-0 start-0 dark:border-gray-600">
+      <nav className="bg-[#292f36] dark:bg-gray-900 fixed w-full z-20 top-0 start-0 dark:border-gray-600 shadow-lg">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="#"
@@ -82,7 +82,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <hr className="h-px lg:mx-20 bg-[#12f7d6] border-0 dark:bg-gray-700"></hr>
+        <hr className="h-px bg-[#12f7d6] border-0 dark:bg-gray-700 md:hidden"></hr>
       </nav>
     </div>
   );

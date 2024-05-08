@@ -5,7 +5,11 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "about-bg": "url('/src/assets/bg-about.png')",
+      },
+    },
   },
 
   plugins: [require("flowbite/plugin")],
