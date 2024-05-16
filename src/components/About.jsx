@@ -1,5 +1,6 @@
 import imageSrc from "../assets/dhenmas.jpg";
 import { motion } from "framer-motion";
+import { aboutText } from "../constans/index";
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: window.innerWidth > 1024 ? -80 : -20 }}
+            initial={{ opacity: 0, x: window.innerWidth > 1024 ? -80 : -15 }}
             transition={{ duration: 1 }}
             layout="position"
             className="flex justify-center md:justify-center"
@@ -26,18 +27,13 @@ const About = () => {
           </motion.div>
           <motion.div
             whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: window.innerWidth > 1024 ? 80 : 20 }}
+            initial={{ opacity: 0, x: window.innerWidth > 1024 ? 80 : 15 }}
             transition={{ duration: 1 }}
             layout="position"
-            className="flex md:py-8"
+            className="flex md:py-8 justify-center items-center"
           >
-            <p className="text-base font-extralight rounded-xl p-5 bg-[#292f36] shadow-2xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              beatae sapiente dolorem maiores non praesentium aut facere aliquid
-              dolores culpa repellat possimus recusandae temporibus quae
-              asperiores facilis provident assumenda animi, nemo veniam corrupti
-              a. Dignissimos deleniti pariatur nobis reprehenderit aliquid fugit
-              a nemo placeat dolores. Eaque culpa dolor qui perferendis.
+            <p className="text-base font-extralight rounded-xl p-8 bg-[#292f36] shadow-2xl text-center] ">
+              {aboutText}
             </p>
           </motion.div>
         </div>

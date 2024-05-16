@@ -26,7 +26,7 @@ const Technologies = () => {
     },
   });
   return (
-    <div className="bg-[#1a1e23] text-white py-8">
+    <div className="bg-[#1a1e23] text-white py-8" id="techonologies">
       <h1 className="py-8 md:mb-10 text-center text-4xl">Technologies</h1>
 
       <div className="flex flex-col items-center">
@@ -276,6 +276,7 @@ const Technologies = () => {
               initial="initial"
               animate="animate"
               className="rounded-2xl border-4 border-teal-800 p-2"
+              id="projects"
             >
               <SiGithub class="text-7xl" />
             </motion.div>

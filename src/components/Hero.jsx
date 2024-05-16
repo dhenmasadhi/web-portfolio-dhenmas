@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { motion } from "framer-motion";
+import resume from "../assets/resume.pdf";
 
 const Hero = () => {
   return (
@@ -77,23 +78,33 @@ const Hero = () => {
           <FaGithub />
         </motion.a>
       </div>
-      <div className="flex justify-center items-center my-7 gap-10 mb-10 md:mb-32">
+      <div className="flex justify-center items-center mt-14 gap-10 mb-10 md:mb-28">
         <motion.button
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ opacity: 0, x: window.innerWidth > 1024 ? -100 : -15 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
-          className="flex justify-center items-center gap-x-2 underline font-semibold text-xl hover:scale-110"
         >
-          Let's Talk!
-          <SlArrowRightCircle />
+          <a
+            href="#contact"
+            className="flex justify-center items-center gap-x-2 underline font-semibold text-xl hover:scale-110"
+          >
+            Let's Talk!
+            <SlArrowRightCircle />
+          </a>
         </motion.button>
         <motion.button
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ opacity: 0, x: window.innerWidth > 1024 ? 100 : 15 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
-          className="rounded-lg px-2 py-2 bg-green-600 hover:bg-green-900 hover:scale-110 font-semibold"
+          id="about"
         >
-          Curriculum Vitae
+          <a
+            href={resume}
+            download="Resume"
+            className="rounded-lg px-2 py-2 bg-green-600 hover:bg-green-900 hover:scale-110 font-semibold"
+          >
+            Curriculum Vitae
+          </a>
         </motion.button>
       </div>
     </div>

@@ -1,10 +1,36 @@
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_hypmemd",
+        "template_v9inbzf",
+        form.current,
+        "YsT1vIxsVJNCU0xJm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Pesan terkirim!");
+          window.location.reload();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Gagal mengirim pesan, silakan coba lagi.");
+        }
+      );
+  };
   return (
     <div>
-      <div className="bg-[#1a1e23] text-white py-8">
+      <div className="bg-[#1a1e23] text-white py-8" id="contact">
         <h1 className="mb-5 text-center text-4xl">Contact Me</h1>
         <motion.div
           whileInView={{ opacity: 1, scale: 1 }}
@@ -17,7 +43,11 @@ const Contact = () => {
           </h3>
         </motion.div>
 
-        <form className="max-w-md mx-8 md:mx-auto">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="max-w-md mx-8 md:mx-auto"
+        >
           <motion.div
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -26,14 +56,14 @@ const Contact = () => {
           >
             <input
               type="text"
-              name="floating_email"
-              id="floating_email"
+              name="from_name"
+              id="from_name"
               className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
               placeholder=" "
               required=""
             />
             <label
-              htmlFor="floating_email"
+              htmlFor="from_name"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Your Name
@@ -47,14 +77,14 @@ const Contact = () => {
           >
             <input
               type="email"
-              name="floating_email"
-              id="floating_email"
+              name="from_email"
+              id="from_email"
               className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
               placeholder=" "
               required=""
             />
             <label
-              htmlFor="floating_email"
+              htmlFor="from_email"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Email address
@@ -67,8 +97,8 @@ const Contact = () => {
             className="relative z-0 w-full mb-5 group"
           >
             <textarea
-              name="floating_email"
-              id="floating_email"
+              name="message"
+              id="message"
               className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
               placeholder=" "
               required=""
@@ -76,7 +106,7 @@ const Contact = () => {
               cols="50"
             ></textarea>
             <label
-              htmlFor="floating_email"
+              htmlFor="message"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Your Massage
@@ -93,6 +123,7 @@ const Contact = () => {
             Send Massage <IoIosSend />
           </motion.button>
         </form>
+
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between mx-8">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
