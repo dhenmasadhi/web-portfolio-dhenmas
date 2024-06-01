@@ -39,7 +39,7 @@ const Contact = () => {
           className="flex justify-center items-center"
         >
           <h3 className="px-5 py-1 mb-3 text-center text-xl text-green-400 font-bold border-2 rounded-sm border-green-600">
-            Send Me A Massage
+            Send Me A Message
           </h3>
         </motion.div>
 
